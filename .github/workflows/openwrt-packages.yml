@@ -53,7 +53,7 @@ jobs:
         
         cd $GITHUB_WORKSPACE                            ## 进入仓库工作目录
         chmod +x .github/diy/${{matrix.target}}.sh      ## diy目录内的所有脚本  增加可执行的权限
-        git clone -b master https://github.com/zuoweiid/luci-app.git ${{matrix.target}}     ## 克隆插件 软件包到master目录内
+        # git clone -b master https://github.com/zuoweiid/luci-app.git ${{matrix.target}}     ## 克隆插件 软件包到master目录内
         cd ${{matrix.target}}                                                               ## 进入master目录内
         
         # rm -rf {LICENSE,README,README.md}
