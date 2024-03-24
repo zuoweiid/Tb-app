@@ -41,11 +41,11 @@ jobs:
         sudo timedatectl set-timezone "Asia/Shanghai"                              ## 时区为上海
         
         
-    - name: SSH链接（到此预计10分钟）             ## SSH connection to Actions
-      uses: P3TERX/ssh2actions@v1.0.0
-      env:
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+    # - name: SSH链接（到此预计10分钟）             ## SSH connection to Actions
+      # uses: P3TERX/ssh2actions@v1.0.0
+      # env:
+        # TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        # TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         
     - name: 克隆软件包                   ## Clone packages
       run: |
@@ -54,11 +54,11 @@ jobs:
         cd $GITHUB_WORKSPACE                            ## 进入仓库工作目录
         chmod +x .github/diy/${{matrix.target}}.sh      ## diy目录内的所有脚本  增加可执行的权限
         git clone -b master https://github.com/zuoweiid/luci-app.git ${{matrix.target}}     ## 克隆插件 软件包到master目录内
-        cd ${{matrix.target}}                                                                      ## 进入master目录内
+        cd ${{matrix.target}}                                                               ## 进入master目录内
         
-        rm -rf {LICENSE,README,README.md}
-        rm -rf ./*/{LICENSE,README,README.md}
-        rm -rf ./*/*/{LICENSE,README,README.md}    # 删除无用说明
+        # rm -rf {LICENSE,README,README.md}
+        # rm -rf ./*/{LICENSE,README,README.md}
+        # rm -rf ./*/*/{LICENSE,README,README.md}         ## 删除无用说明
         
         
         git rm -r --cache * >/dev/null 2>&1 &                                           ## 清除克隆的插件多余的名称，只显示插件版本号 方便比较；并保存至 index 文件内：.github/master/.git/index
