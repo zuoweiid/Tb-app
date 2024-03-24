@@ -38,7 +38,7 @@ git clone --depth 1 https://github.com/kenzok78/luci-app-fileassistant
 git clone --depth 1 https://github.com/immortalwrt/homeproxy
 # luci-app-filebrowser
 git clone --depth 1 https://github.com/yaof2/luci-app-ikoolproxy
-git clone --depth 1 https://github.com/linkease/nas-packages-luci && mv -n nas-packages-luci/luci/{luci-app-istorex,luci-app-quickstart} ./; rm -rf nas-packages-luci    # 多个插件
+#### git clone --depth 1 https://github.com/linkease/nas-packages-luci && mv -n nas-packages-luci/luci/{luci-app-istorex,luci-app-quickstart} ./; rm -rf nas-packages-luci    # 多个插件
 git clone --depth 1 https://github.com/jefferymvp/luci-app-koolproxyR
 git clone --depth 1 https://github.com/sirpdboy/luci-app-lucky
 git clone --depth 1 https://github.com/vernesong/OpenClash && mv -n OpenClash/luci-app-openclash ./; rm -rf OpenClash
